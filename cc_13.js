@@ -17,8 +17,8 @@ function createElement(name, position) {
 //Attach a click event listener to the "Remove" button that removes its parent employee card using removeChild
 
 
-    deleteBtn = document.createElement("button"); //A "Remove" button for deleting the card.
-    deleteBtn.textContent = "Remove Employee"; //Setting the button text
+    deleteBtn = document.createElement("button"); 
+    deleteBtn.textContent = "Remove Employee"; 
     
     deleteBtn.addEventListener("click", (event) => { 
         employeeContainer.removeChild(card)
@@ -33,7 +33,8 @@ function createElement(name, position) {
     editBtn.addEventListener("click", (event) => { 
         svBtn = document.createElement("button"); 
         svBtn.textContent = "Save"; 
-        card.replaceChild(svBtn, card.children[2]); //Appending the save button to the card
+    //Appending  save button to  card
+        card.replaceChild(svBtn, card.children[2]); 
         card.children[1].outerHTML += `<input value="${name}"><input value="${position}">`
 
         //Add an event listener to each employee card's edit button that, on click, swaps static content with input fields
