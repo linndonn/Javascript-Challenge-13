@@ -50,7 +50,7 @@ function createElement(name, position) {
 
     employeeContainer.appendChild(card); 
 
-
+};
 
 // Test Data - Task 2
 createElement('Shaquille Harrigan', 'Chief Technical Officer');
