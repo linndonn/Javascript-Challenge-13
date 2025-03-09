@@ -29,3 +29,16 @@ function createElement(name, position) {
 createElement('Shaquille Harrigan', 'Chief Technical Officer');
 createElement('Myron Williams', 'Operations Analyst');
 createElement('Jemella Bascus', 'Logistics & Development');
+
+//Task 3: Converting NodeLists to Arrays for Bulk Updates
+
+//Use document.querySelectorAll to select all elements with the employee card class.
+const nodelistEmployee = document.querySelectorAll(".employeeCard");
+
+//Convert the NodeList into an array using Array.from or the spread operator.
+const employeeCardArray = Array.from(nodelistEmployee);
+
+//Use an array method (e.g., .forEach()) to update each card’s style or add a highlighting class.
+employeeCardArray.forEach(card => { 
+    card.style.backgroundColor = "Crimson";
+});
