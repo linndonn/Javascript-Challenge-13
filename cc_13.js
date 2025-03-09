@@ -9,22 +9,13 @@ function createElement(name, position) {
     // Set attributes (such as class and id) using setAttribute as needed.
     card.setAttribute("class", "employeeCard"); 
     card.setAttribute("id", `employee`); 
+    card.innerHTML = `<h3>${name}</h3><p>${position}</p>`;
     
-    //A "Remove" button for deleting the card.
-    btn = document.createElement("button"); 
-    btn.textContent = "Remove Information"; 
-
-    //Adding an event listener to the button to removeChild card from employeeContainer
-    btn.addEventListener("click", () => {employeeContainer.removeChild(card)}); 
-    card.appendChild(btn); //Appending the remove button to the card
+    card.addEventListener("click", () => {console.log(`Clicked ${card.id} - ${name}`)}) 
     
-    //Append the employee card to the "employeeContainer" using appendChild.
-    employeeContainer.appendChild(card); 
-    
-};
 //Task 4 - Employee Card Removal with Event Bubbling
 //Attach a click event listener to the "Remove" button that removes its parent employee card using removeChild
-card.addEventListener("click", () => {console.log(`Clicked ${card.id} - ${name}`)}) 
+
 
     deleteBtn = document.createElement("button"); //A "Remove" button for deleting the card.
     deleteBtn.textContent = "Remove Employee"; //Setting the button text
@@ -46,7 +37,7 @@ card.addEventListener("click", () => {console.log(`Clicked ${card.id} - ${name}`
         card.children[1].outerHTML += `<input value="${name}"><input value="${position}">`
 
         //Add an event listener to each employee card's edit button that, on click, swaps static content with input fields
-        svBtn.addEventListener("click", (event) => { .
+        svBtn.addEventListener("click", (event) => { 
             card.children[0].textContent = card.children[2].value 
             card.children[1].textContent = card.children[3].value 
             event.stopPropagation();
