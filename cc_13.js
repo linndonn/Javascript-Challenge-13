@@ -35,6 +35,32 @@ card.addEventListener("click", () => {console.log(`Clicked ${card.id} - ${name}`
         event.stopPropagation(); 
     });
 
+    //Task 5 - Inline Editing for Employee Cards
+    editBtn = document.createElement("button"); 
+    editBtn.textContent = "Edit Data"; 
+
+    editBtn.addEventListener("click", (event) => { 
+        svBtn = document.createElement("button"); 
+        svBtn.textContent = "Save"; 
+        card.replaceChild(svBtn, card.children[2]); //Appending the save button to the card
+        card.children[1].outerHTML += `<input value="${name}"><input value="${position}">`
+
+        //Add an event listener to each employee card's edit button that, on click, swaps static content with input fields
+        svBtn.addEventListener("click", (event) => { .
+            card.children[0].textContent = card.children[2].value 
+            card.children[1].textContent = card.children[3].value 
+            event.stopPropagation();
+        });
+        event.stopPropagation();
+    });
+
+    card.appendChild(editBtn);
+    card.appendChild(deleteBtn); 
+
+    employeeContainer.appendChild(card); 
+
+
+
 // Test Data - Task 2
 createElement('Shaquille Harrigan', 'Chief Technical Officer');
 createElement('Myron Williams', 'Operations Analyst');
