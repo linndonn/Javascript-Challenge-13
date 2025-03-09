@@ -21,9 +21,19 @@ function createElement(name, position) {
     //Append the employee card to the "employeeContainer" using appendChild.
     employeeContainer.appendChild(card); 
     
-   
-
 };
+//Task 4 - Employee Card Removal with Event Bubbling
+//Attach a click event listener to the "Remove" button that removes its parent employee card using removeChild
+card.addEventListener("click", () => {console.log(`Clicked ${card.id} - ${name}`)}) 
+
+    deleteBtn = document.createElement("button"); //A "Remove" button for deleting the card.
+    deleteBtn.textContent = "Remove Employee"; //Setting the button text
+    
+    deleteBtn.addEventListener("click", (event) => { 
+        employeeContainer.removeChild(card)
+//Use stopPropagation() in the "Remove" button’s event handler to prevent the event from bubbling up to the container.
+        event.stopPropagation(); 
+    });
 
 // Test Data - Task 2
 createElement('Shaquille Harrigan', 'Chief Technical Officer');
@@ -42,3 +52,6 @@ const employeeCardArray = Array.from(nodelistEmployee);
 employeeCardArray.forEach(card => { 
     card.style.backgroundColor = "Crimson";
 });
+
+
+
